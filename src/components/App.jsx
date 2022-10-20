@@ -6,8 +6,9 @@ import { useState, useEffect } from 'react';
 // import { Formik } from 'formik';
 
 export default function App() {
-  const [contacts, setContacts] = useState(JSON.parse(localStorage.getItem('contacts')) ?? []
-  );
+  const [contacts, setContacts] = useState(() => {
+    return JSON.parse(localStorage.getItem('contacts')) ?? [];
+  });
 
   const [filter, setFilter] = useState('');
 
@@ -18,7 +19,7 @@ export default function App() {
   //   }, [value]);
   //   return ref.current;
   // }
-  
+
   // const prevContacts = usePrevious(contacts);
 
   const formHandler = data => {
@@ -50,7 +51,7 @@ export default function App() {
   };
 
   useEffect(() => {
-      localStorage.setItem('contacts', JSON.stringify(contacts));
+    localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
   const filteredContacts = getFiltered();
