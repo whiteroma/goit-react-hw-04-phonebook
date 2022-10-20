@@ -6,10 +6,8 @@ import { useState, useEffect } from 'react';
 // import { Formik } from 'formik';
 
 export default function App() {
-  const [contacts, setContacts] = useState(() => {
-    const parsedContacts = JSON.parse(localStorage.getItem('contacts'));
-    return parsedContacts || [];
-  });
+  const [contacts, setContacts] = useState(JSON.parse(localStorage.getItem('contacts')) ?? []
+  );
 
   const [filter, setFilter] = useState('');
 
