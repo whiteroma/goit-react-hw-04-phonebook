@@ -2,7 +2,7 @@ import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
 import ContactForm from './ContactForm/ContactForm';
 import { Container } from './App.styled';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 // import { Formik } from 'formik';
 
 export default function App() {
