@@ -13,15 +13,15 @@ export default function App() {
 
   const [filter, setFilter] = useState('');
 
-  const usePrevious = (value) => {
-    const ref = useRef();
-    useEffect(() => {
-      ref.current = value;
-    }, [value]);
-    return ref.current;
-  }
+  // const usePrevious = (value) => {
+  //   const ref = useRef();
+  //   useEffect(() => {
+  //     ref.current = value;
+  //   }, [value]);
+  //   return ref.current;
+  // }
   
-  const prevContacts = usePrevious(contacts);
+  // const prevContacts = usePrevious(contacts);
 
   const formHandler = data => {
     const addedName = contacts
@@ -52,12 +52,8 @@ export default function App() {
   };
 
   useEffect(() => {
-    console.log('componentDidUpdate');
-    if (contacts !== prevContacts) {
       localStorage.setItem('contacts', JSON.stringify(contacts));
-      console.log('contacts', contacts);
-    }
-  }, [contacts, prevContacts]);
+  }, [contacts]);
 
   const filteredContacts = getFiltered();
 
