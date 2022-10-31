@@ -3,7 +3,6 @@ import Filter from './Filter/Filter';
 import ContactForm from './ContactForm/ContactForm';
 import { Container } from './App.styled';
 import { useState, useEffect } from 'react';
-// import { Formik } from 'formik';
 
 export default function App() {
   const [contacts, setContacts] = useState(() => {
@@ -11,16 +10,6 @@ export default function App() {
   });
 
   const [filter, setFilter] = useState('');
-
-  // const usePrevious = (value) => {
-  //   const ref = useRef();
-  //   useEffect(() => {
-  //     ref.current = value;
-  //   }, [value]);
-  //   return ref.current;
-  // }
-
-  // const prevContacts = usePrevious(contacts);
 
   const formHandler = data => {
     const addedName = contacts
